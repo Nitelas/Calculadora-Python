@@ -1,6 +1,7 @@
 print("+ ) suma")
 print("- ) resta")
 print("* ) multiplicacion")
+print("/ ) division")
 print("S ) SALIR")
 print("")
 
@@ -10,21 +11,24 @@ numero1 = int(input("Dime el primer número: "))
 
 def suma(numero1, numero2):
     resultado = numero1 + numero2
-    print(f"({numero1} + {numero2}) = {resultado}")
     return resultado
 
 
 def resta(numero1, numero2):
     resultado = numero1 - numero2
-    print(f"({numero1} - {numero2}) = {resultado})")
     return resultado
 
 
 def multiplicacion(numero1, numero2):
     resultado = numero1 * numero2
-    print(f"({numero1} * {numero2}) = {resultado}")
+    return resultado
+    
+def division (numero1,numero2):
+    resultado = numero1 / numero2
     return resultado
 
+
+parentesis = str(numero1)
 
 while solicitud != "S":
 
@@ -38,11 +42,16 @@ while solicitud != "S":
 
     elif solicitud == "*":
         resultado = multiplicacion(numero1, numero2)
+    
+    elif solicitud == "/":
+        resultado = division(numero1,numero2)
 
     
-    parentesis = print(f"({numero1} {solicitud} {numero2})= {resultado}")
+    parentesis = (f"({parentesis} {solicitud} {numero2})")
     
-    operacion = parentesis
+    print(f"{parentesis} = {resultado}")
+    
+    
     
     numero1 = resultado
     
@@ -52,6 +61,7 @@ while solicitud != "S":
     print("+ ) suma")
     print("- ) resta")
     print("* ) multiplicacion")
+    print("/ ) division")
     print("S ) SALIR")
     print("")
 
